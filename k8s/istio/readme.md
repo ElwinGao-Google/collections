@@ -26,4 +26,4 @@ istio官方文档：https://istio.io/latest/zh/docs/setup/getting-started/
      * export SECURE_INGRESS_PORT=$(kubectl -n "$INGRESS_NS" get service "$INGRESS_NAME" -o jsonpath='{.spec.ports[?(@.name=="https")].port}') && echo $SECURE_INGRESS_PORT
      * export TCP_INGRESS_PORT=$(kubectl -n "$INGRESS_NS" get service "$INGRESS_NAME" -o jsonpath='{.spec.ports[?(@.name=="tcp")].port}') && echo $TCP_INGRESS_PORT
    6. 确认服务可连通性：curl -s http://localhost/productpage | fgrep title
-2. 
+2. 根据教程继续尝试istio的其他功能：https://istio.io/latest/zh/docs/examples/bookinfo/
