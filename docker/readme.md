@@ -44,3 +44,10 @@
 * docker pull grafana/grafana-enterprise
 * docker run -p 3000:3000 --name=grafana grafana/grafana-enterprise
 * user/pass: admin/admin
+
+## Etcd
+### doc
+* https://etcd.io/docs/v3.6/op-guide/container/
+### run
+* docker pull gcr.io/etcd-development/etcd:v3.6.0
+* 按照官方的脚本，无法启动，报端口占用，但实际上端口并没有被占用
