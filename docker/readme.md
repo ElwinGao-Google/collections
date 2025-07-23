@@ -15,6 +15,7 @@
 * docker run -p 3306:3306 --name=mysql container-registry.oracle.com/mysql/community-server
 * docker logs mysql 2>&1 | grep GENERATED
 * docker exec -it mysql mysql -uroot -p
+* alter user USER() identified by 'root';
 
 ## Redis
 ### doc
