@@ -16,30 +16,7 @@ from flask import Blueprint
 from flask import request
 from flask import jsonify
 
-from peewee import SqliteDatabase
-from peewee import Model
-from peewee import AutoField
-from peewee import CharField
-from peewee import DateField
-
-# 模拟存储用户信息
-db = SqliteDatabase('test.db')
-
-class User(Model):
-    class Meta:
-        database = db
-        table_name = 'user'
-    
-    id = AutoField(primary_key=True)
-    name = CharField()
-    age = DateField()
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'age': self.age
-        }
+from db import db, User
 
 # 全局应用对象
 app = Flask(__name__)
