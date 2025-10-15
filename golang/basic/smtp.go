@@ -24,11 +24,11 @@ func main() {
 	auth := smtp.PlainAuth("", fromEmail, appPassword, smtpHost)
 
 	// 2. 构建邮件内容 (手动拼接 header 和 body)
-	subject := "Subject: Hello from Golang! (via net/smtp)\n"
-	mime := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
+	subject := "Subject: Hello from Golang! (via net/smtp)"
+	mime := "MIME-version: 1.0;\r\nContent-Type: text/html; charset=\"UTF-8\";\r\n\r\n"
 	body := "<html><body>This is a test email sent from a Go program using the standard library.</body></html>"
 
-	message := []byte(subject + mime + body)
+	message := []byte(subject + "\r\n" + mime + body)
 
 	// 3. 发送邮件
 	if err := smtp.SendMail(smtpAddr, auth, fromEmail, recipients, message); err != nil {
